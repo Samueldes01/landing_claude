@@ -23,12 +23,20 @@ const problems = [
   },
 ]
 
-// Animation simplifiée pour mobile
-const cardVariant = {
-  hidden: { opacity: 0, x: 30 },
+// Animations GPU optimisées (transform + opacity uniquement)
+const containerVariants = {
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    x: 0,
+    transition: { staggerChildren: 0.08 }
+  }
+}
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
     transition: { duration: 0.4, ease: 'easeOut' }
   }
 }
@@ -40,10 +48,10 @@ export function Problems() {
       <div className="absolute top-10 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-[60px] pointer-events-none" />
 
       <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
         className="mb-6"
       >
         <span className="inline-block px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-medium mb-3">
@@ -57,15 +65,17 @@ export function Problems() {
         </p>
       </motion.div>
 
-      <div className="space-y-3">
+      <motion.div
+        className="space-y-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+      >
         {problems.map((problem, index) => (
           <motion.div
             key={index}
             variants={cardVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: index * 0.1 }}
             className="flex items-center gap-4 p-4 rounded-2xl bg-dark-800/50 border border-dark-700/50"
           >
             {/* Icon */}
@@ -88,7 +98,7 @@ export function Problems() {
             </p>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Transition text */}
       <motion.div
