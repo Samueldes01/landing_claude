@@ -21,12 +21,12 @@ const staggerChildren = {
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-start pt-12 pb-10 px-5 relative overflow-hidden">
+    <section className="pt-8 pb-16 px-5 relative overflow-hidden">
       {/* Background gradient - simplifié pour mobile */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[250px] h-[250px] bg-orange-500/10 rounded-full blur-[80px] pointer-events-none" />
 
       <motion.div
-        className="relative z-10 flex-1 flex flex-col justify-center"
+        className="relative z-10"
         initial="hidden"
         animate="visible"
         variants={staggerChildren}
