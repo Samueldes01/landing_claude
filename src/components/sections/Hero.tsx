@@ -3,27 +3,43 @@ import { Button } from '../ui/Button'
 
 const CALENDLY_URL = 'https://calendly.com/desplat72/nouvelle-reunion'
 
-// Animations optimisées pour mobile (utilise transform uniquement)
+// Animations fluides pour mobile
 const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
+  }
+}
+
+const fadeInScale = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
     transition: { duration: 0.5, ease: 'easeOut' }
   }
 }
 
 const staggerChildren = {
   visible: {
-    transition: { staggerChildren: 0.1 }
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 }
   }
 }
 
 export function Hero() {
   return (
-    <section className="pt-8 pb-16 px-5 relative overflow-hidden">
-      {/* Background gradient - simplifié pour mobile */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[250px] h-[250px] bg-orange-500/10 rounded-full blur-[80px] pointer-events-none" />
+    <section className="min-h-screen flex flex-col justify-center px-5 pb-8 relative overflow-hidden">
+      {/* Background gradient animé */}
+      <motion.div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-orange-500/15 rounded-full blur-[100px] pointer-events-none"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.15, 0.25, 0.15]
+        }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+      />
 
       <motion.div
         className="relative z-10"
@@ -98,6 +114,27 @@ export function Hero() {
           <p className="text-gray-500 text-xs">
             Appel de 30 min • Sans engagement
           </p>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.5 }}
+      >
+        <span className="text-gray-500 text-xs">Scroll</span>
+        <motion.div
+          className="w-6 h-10 rounded-full border-2 border-gray-600 flex justify-center pt-2"
+          animate={{ borderColor: ['#4B5563', '#FF6B00', '#4B5563'] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <motion.div
+            className="w-1.5 h-1.5 bg-orange-500 rounded-full"
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          />
         </motion.div>
       </motion.div>
     </section>
