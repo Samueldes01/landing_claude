@@ -22,7 +22,7 @@ export function Stats() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         className="text-center mb-8"
       >
         <h2 className="text-2xl font-bold text-white mb-2">
@@ -41,7 +41,7 @@ export function Stats() {
         className="text-center text-gray-500 text-sm mt-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ delay: 0.6 }}
       >
         Je connais le terrain et ses exigences
@@ -72,7 +72,7 @@ function StatCard({ value, suffix, label, sublabel, delay }: StatCardProps) {
       className="relative p-6 rounded-2xl bg-dark-800/80 border border-dark-700/50 overflow-hidden"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.3 }}
       transition={{ delay, duration: 0.5 }}
     >
       {/* Background glow */}

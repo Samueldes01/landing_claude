@@ -10,7 +10,7 @@ export function Footer() {
         className="text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
       >
         {/* Logo/Name */}
         <div className="flex items-center justify-center gap-2 mb-4">

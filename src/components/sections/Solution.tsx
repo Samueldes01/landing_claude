@@ -23,7 +23,7 @@ export function Solution() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.4 }}
       >
         <span className="inline-block px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-medium mb-3">
@@ -45,7 +45,7 @@ export function Solution() {
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
             className="p-4 rounded-2xl bg-dark-800/80 border border-orange-500/20 shadow-lg shadow-black/20"
           >
@@ -66,7 +66,7 @@ export function Solution() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.4 }}
       >
         <p className="text-white font-semibold text-sm mb-3 flex items-center gap-2">
@@ -74,7 +74,7 @@ export function Solution() {
           Découvre l'accompagnement en détail
         </p>
 
-        <div className="relative rounded-2xl overflow-hidden border border-dark-700/80 ring-1 ring-orange-500/10">
+        <div className="relative rounded-2xl overflow-hidden border-2 border-orange-500/30 ring-2 ring-orange-500/10 shadow-lg shadow-orange-500/5">
           <AnimatePresence mode="wait">
             {!isVideoPlaying ? (
               <motion.div

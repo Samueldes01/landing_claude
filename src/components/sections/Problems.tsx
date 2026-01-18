@@ -50,7 +50,7 @@ export function Problems() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
         className="mb-6"
       >
@@ -69,7 +69,7 @@ export function Problems() {
         className="space-y-3"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={containerVariants}
       >
         {problems.map((problem, index) => (
@@ -105,7 +105,7 @@ export function Problems() {
         className="mt-6 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ delay: 0.4 }}
       >
         <div className="inline-flex items-center gap-2 text-gray-500">

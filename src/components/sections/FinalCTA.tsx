@@ -57,7 +57,7 @@ export function FinalCTA() {
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
           {/* Animated icon */}
@@ -65,7 +65,7 @@ export function FinalCTA() {
             className="relative w-20 h-20 mx-auto mb-6"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
           >
             {/* Rotating ring */}
@@ -97,7 +97,7 @@ export function FinalCTA() {
             className="text-2xl font-bold text-white mb-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.3 }}
           >
             Prêt à passer au
@@ -106,7 +106,7 @@ export function FinalCTA() {
             className="text-2xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.4 }}
           >
             <span className="text-gradient">niveau supérieur</span> ?
@@ -117,7 +117,7 @@ export function FinalCTA() {
             className="text-gray-400 text-sm mb-8 max-w-xs mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.5 }}
           >
             Réserve ton appel découverte gratuit de 30 minutes et discutons de tes objectifs.
@@ -127,7 +127,7 @@ export function FinalCTA() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.6 }}
             className="relative"
           >
@@ -145,7 +145,7 @@ export function FinalCTA() {
             className="flex flex-wrap items-center justify-center gap-4 mt-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.8 }}
           >
             {[
@@ -158,7 +158,7 @@ export function FinalCTA() {
                 className="flex items-center gap-2 text-gray-500 text-xs"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{ delay: 0.9 + i * 0.1 }}
                 whileHover={{ scale: 1.05, color: '#FF6B00' }}
               >
@@ -175,7 +175,7 @@ export function FinalCTA() {
             className="mt-6 text-orange-400/60 text-xs"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 1.2 }}
             animate={{ opacity: [0.6, 1, 0.6] }}
           >

@@ -41,7 +41,7 @@ export function About() {
         className="relative w-48 h-48 mx-auto mb-6"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.5 }}
       >
         {/* Glow effect behind */}
@@ -52,7 +52,7 @@ export function About() {
           <img
             src="/samuel-desplat.jpg"
             alt="Samuel DESPLAT"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[center_30%]"
             onError={(e) => {
               // Fallback if image doesn't load
               const target = e.target as HTMLImageElement
@@ -71,7 +71,7 @@ export function About() {
           className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-4 py-1 bg-orange-500 rounded-full shadow-lg"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ delay: 0.3 }}
         >
           <span className="text-white text-sm font-semibold whitespace-nowrap">
@@ -85,7 +85,7 @@ export function About() {
         className="text-center mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ delay: 0.2 }}
       >
         <h3 className="text-xl font-bold text-white mb-1">
@@ -103,7 +103,7 @@ export function About() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         variants={staggerContainer}
         className="space-y-3"
       >
