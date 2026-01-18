@@ -21,7 +21,7 @@ const staggerChildren = {
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-5 pb-8 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-start pt-10 px-5 pb-24 relative overflow-hidden">
       {/* Background gradient animé */}
       <motion.div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-orange-500/15 rounded-full blur-[100px] pointer-events-none"
@@ -108,25 +108,38 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - Phone swipe */}
       <motion.div
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        initial={{ opacity: 0, y: -10 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.5 }}
       >
-        <span className="text-gray-500 text-xs">Scroll</span>
-        <motion.div
-          className="w-6 h-10 rounded-full border-2 border-gray-600 flex justify-center pt-2"
-          animate={{ borderColor: ['#4B5563', '#FF6B00', '#4B5563'] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
+        {/* Phone icon with swipe gesture */}
+        <div className="relative">
+          {/* Phone frame */}
+          <div className="w-8 h-14 rounded-xl border-2 border-gray-600 relative overflow-hidden">
+            {/* Screen */}
+            <div className="absolute inset-1 rounded-lg bg-dark-800/50" />
+            {/* Swipe line */}
+            <motion.div
+              className="absolute left-1/2 -translate-x-1/2 w-0.5 h-4 bg-orange-500 rounded-full"
+              animate={{ y: [16, 4, 16] }}
+              transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          </div>
+          {/* Swipe arrow */}
           <motion.div
-            className="w-1.5 h-1.5 bg-orange-500 rounded-full"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        </motion.div>
+            className="absolute -top-3 left-1/2 -translate-x-1/2"
+            animate={{ y: [0, -4, 0], opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" strokeWidth="2.5" strokeLinecap="round">
+              <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+          </motion.div>
+        </div>
+        <span className="text-gray-500 text-[10px] uppercase tracking-wider">Swipe</span>
       </motion.div>
     </section>
   )
