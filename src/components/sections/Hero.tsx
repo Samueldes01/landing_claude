@@ -3,24 +3,24 @@ import { Button } from '../ui/Button'
 
 const CALENDLY_URL = 'https://calendly.com/desplat72/nouvelle-reunion'
 
-// Animations optimisées GPU (transform + opacity uniquement)
+// Animation gauche vers droite fluide
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2
+      staggerChildren: 0.08,
+      delayChildren: 0.1
     }
   }
 }
 
-const slideUp = {
-  hidden: { opacity: 0, y: 30 },
+const slideFromLeft = {
+  hidden: { opacity: 0, x: -40 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' }
+    x: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
   }
 }
 
@@ -28,13 +28,13 @@ const fadeIn = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.5, ease: 'easeOut' }
+    transition: { duration: 0.4, ease: 'easeOut' }
   }
 }
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-start pt-10 px-5 pb-8 relative overflow-hidden">
+    <section className="pt-10 px-5 pb-6 relative overflow-hidden">
       {/* Background gradient statique pour performance */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-orange-500/15 rounded-full blur-[80px] pointer-events-none" />
 
@@ -45,7 +45,7 @@ export function Hero() {
         variants={containerVariants}
       >
         {/* Badge */}
-        <motion.div variants={slideUp} className="mb-5">
+        <motion.div variants={slideFromLeft} className="mb-5">
           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-medium">
             <span className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse" />
             Prépa Physique Basketball
@@ -53,7 +53,7 @@ export function Hero() {
         </motion.div>
 
         {/* Main headline */}
-        <motion.div variants={slideUp} className="mb-5">
+        <motion.div variants={slideFromLeft} className="mb-5">
           <h1 className="text-[1.75rem] sm:text-3xl font-bold leading-[1.2] text-white">
             Passe au
           </h1>
@@ -67,7 +67,7 @@ export function Hero() {
 
         {/* Subtitle */}
         <motion.p
-          variants={slideUp}
+          variants={slideFromLeft}
           className="text-gray-400 text-base mb-6 max-w-[320px] leading-relaxed"
         >
           Un accompagnement{' '}
@@ -77,7 +77,7 @@ export function Hero() {
         </motion.p>
 
         {/* Key points */}
-        <motion.div variants={slideUp} className="flex flex-wrap gap-2 mb-6">
+        <motion.div variants={slideFromLeft} className="flex flex-wrap gap-2 mb-6">
           {['Explosivité', 'Force', 'Nutrition'].map((item) => (
             <span
               key={item}
@@ -89,7 +89,7 @@ export function Hero() {
         </motion.div>
 
         {/* CTA Button */}
-        <motion.div variants={slideUp}>
+        <motion.div variants={slideFromLeft}>
           <Button href={CALENDLY_URL} variant="primary" size="lg" pulse>
             <span>🔥</span>
             Réserver mon appel gratuit
