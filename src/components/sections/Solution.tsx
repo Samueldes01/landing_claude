@@ -16,7 +16,7 @@ export function Solution() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
   return (
-    <section className="py-14 px-5 relative overflow-hidden">
+    <section className="py-16 px-5 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-0 right-0 w-40 h-40 bg-orange-500/5 rounded-full blur-[60px] pointer-events-none" />
 

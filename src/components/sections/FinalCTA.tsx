@@ -5,7 +5,7 @@ const CALENDLY_URL = 'https://calendly.com/desplat72/nouvelle-reunion'
 
 export function FinalCTA() {
   return (
-    <section className="py-20 px-5 relative overflow-hidden">
+    <section className="py-16 px-5 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div

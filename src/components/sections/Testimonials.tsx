@@ -13,7 +13,7 @@ export function Testimonials() {
   const { ref, controls } = useScrollAnimation()
 
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-5">
       <motion.div
         ref={ref}
         initial="hidden"

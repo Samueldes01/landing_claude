@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 export function AppShowcase() {
   return (
-    <section className="py-14 px-5 overflow-hidden">
+    <section className="py-16 px-5 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}

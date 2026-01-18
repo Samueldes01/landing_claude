@@ -18,7 +18,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-5">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -35,7 +35,7 @@ const cardVariant = {
 
 export function Problems() {
   return (
-    <section className="py-14 px-5 relative overflow-hidden">
+    <section className="py-16 px-5 relative overflow-hidden">
       {/* Background glow simplifié */}
       <div className="absolute top-10 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-[60px] pointer-events-none" />
 
