@@ -93,6 +93,40 @@ body {
   }
 }
 
+/* Animation slide-in de gauche - ultra fluide */
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Animation fade-in simple */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+  opacity: 0;
+  will-change: opacity;
+}
+
 /* Pulse animation for CTA - optimisé */
 @keyframes pulse-ring {
   0% {
