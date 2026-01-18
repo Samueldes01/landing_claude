@@ -21,8 +21,8 @@ export function Solution() {
       <div className="absolute top-0 right-0 w-40 h-40 bg-orange-500/5 rounded-full blur-[60px] pointer-events-none" />
 
       <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.4 }}
       >
@@ -30,7 +30,8 @@ export function Solution() {
           Accompagnement complet
         </span>
         <h2 className="text-2xl font-bold text-white mb-2">
-          De A à Z, tout est couvert
+          Tout ce qu'il te faut<br />
+          <span className="text-gradient">pour exploser</span>
         </h2>
         <p className="text-gray-500 text-sm mb-6">
           Prépa physique, suivi personnalisé et nutrition
@@ -46,15 +47,15 @@ export function Solution() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
-            className="p-4 rounded-2xl bg-dark-800/30 border border-dark-700/50"
+            className="p-4 rounded-2xl bg-dark-800/80 border border-orange-500/20 shadow-lg shadow-black/20"
           >
-            <div className="w-9 h-9 rounded-xl bg-dark-700/50 flex items-center justify-center text-lg mb-2">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center text-xl mb-3">
               {solution.icon}
             </div>
             <h3 className="text-white font-semibold text-sm mb-1">
               {solution.title}
             </h3>
-            <p className="text-gray-400 text-xs leading-relaxed">
+            <p className="text-gray-300 text-xs leading-relaxed">
               {solution.description}
             </p>
           </motion.div>
