@@ -5,9 +5,9 @@ const CALENDLY_URL = 'https://calendly.com/desplat72/nouvelle-reunion'
 
 export function Hero() {
   return (
-    <section className="min-h-[100svh] flex flex-col pt-10 px-5 pb-6 relative overflow-hidden">
+    <section className="min-h-[100svh] flex flex-col justify-center px-5 py-8 relative overflow-hidden">
       {/* Background gradient statique */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[280px] h-[280px] bg-orange-500/10 rounded-full blur-[60px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[280px] h-[280px] bg-orange-500/10 rounded-full blur-[60px] pointer-events-none" />
 
       <div className="relative z-10">
         {/* Badge */}
